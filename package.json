@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.mjs",
-    "build": "[my-framework] build --output public",
+    "build": "tsc && copyfiles src/**/*.json dist && copyfiles -u 1 src/**/*.jpg src/**/*.png dist",
     "dev": "tsx watch --env-file .env src/server.ts",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio"
