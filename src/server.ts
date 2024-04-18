@@ -48,6 +48,8 @@ app.register(getEventAttendees)
 
 app.setErrorHandler(errorHandler)
 
-app.listen({ port: 3333, host: '0.0.0.0' }).then(() => {
-  console.log('HTTP server running!')
-})
+const PORT = process.env.PORT || 3333; // Use a porta atribuída pelo ambiente ou 3333 como padrão
+
+app.listen(PORT, () => {
+  console.log(`HTTP server running on port ${PORT}`);
+});
